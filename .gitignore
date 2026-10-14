@@ -1,0 +1,10 @@
+.venv/
+.build-presentation/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.idea/
+.vscode/
+
