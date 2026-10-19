@@ -1,5 +1,8 @@
 .venv/
 .build-presentation/
+.build-222/
+.qa-final-slides/
+.qa-final-montage.png
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -7,4 +10,6 @@ __pycache__/
 htmlcov/
 .idea/
 .vscode/
+~$*
+
 

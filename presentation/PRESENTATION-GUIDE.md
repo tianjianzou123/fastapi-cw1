@@ -1,25 +1,31 @@
 # FastAPI Presentation Guide
 
-This guide supports the 15-minute group presentation. Slides 14 and 15 are backup slides and are not part of the planned running time.
+This guide supports the 15-minute COMP10020 group presentation. The group's final deck contains 18 slides: slides 1–17 are the planned presentation and slide 18 lists references.
 
 ## Four-presenter timing
 
 | Presenter | Slides | Focus | Target time |
 |---|---:|---|---:|
-| Presenter 1 | 1–3 | Introduction, FastAPI overview and request flow | 3:00 |
-| Presenter 2 | 4–6 | Scenario, REST endpoints and route code | 3:30 |
-| Presenter 3 | 7–9 | Validation, two-minute live demo and tests | 4:00 |
-| Presenter 4 | 10–13 | Evaluation, suitability, conclusion and references | 3:10 |
-| Buffer | — | Handover and technical delay | 1:20 |
+| Member 1 | 1–4 | Introduction, FastAPI overview, key features and architecture | 2:55 |
+| Member 2 | 5–8 | HTTP example, scenario, CRUD and status codes | 3:00 |
+| Member 3 | 9–12 | Route code, Pydantic validation and live demonstration | 3:55 |
+| Member 4 | 13–17 | Testing, advantages, limitations, use cases and conclusion | 3:25 |
+| Buffer | — | Handover, slide changes and a small technical delay | 1:00 |
 
-Each slide also contains speaker notes with concise talking points, transitions, timing and sources.
+The planned content and demo total about 13 minutes 15 seconds. The buffer keeps the classroom presentation below 15 minutes.
+
+## Final presentation files
+
+- `FastAPI_Task_Manager_Presentation_Final.pptx` — unchanged copy of the group's 18-slide final deck
+- `FastAPI_Complete_Presentation_Script_1-17.docx` — rehearsal script for slides 1–17
+- `FastAPI_Classroom_Live_Demo_Tutorial_CN.docx` — detailed Chinese classroom demo instructions
 
 ## Online learning resource
 
 - GitHub Pages: https://tianjianzou123.github.io/fastapi-cw1/
-- Repository: https://github.com/tianjianzou123/fastapi-cw1
+- Public repository: https://github.com/tianjianzou123/fastapi-cw1
 
-Slide 12 shows the Pages address and a QR code. Test the QR code on a phone before class and keep the URL ready to paste into the Teams chat if requested.
+Slide 17 contains the Pages URL and a QR code. Test both before class and keep the URL ready to paste into Microsoft Teams if requested.
 
 ## Start the demonstration before presenting
 
@@ -29,12 +35,14 @@ From the `fastapi-project` folder:
 ..\.venv\Scripts\python.exe -m uvicorn app.main:app
 ```
 
-Open `http://127.0.0.1:8000/docs` and leave the browser on Swagger UI.
+Open `http://127.0.0.1:8000/docs` and leave the browser on Swagger UI before the presentation begins.
 
-## Two-minute live demonstration
+## Live demonstration on slide 12
 
-1. Expand `GET /tasks`, select **Try it out**, then **Execute**. Confirm `200` and `[]`.
-2. Expand `POST /tasks`, select **Try it out**, paste the valid body below, then **Execute**. Confirm `201`.
+Keep the live section to about 2 minutes 15 seconds:
+
+1. Expand `GET /tasks`, select **Try it out**, then **Execute**. Point to `200 OK` and the JSON list.
+2. Expand `POST /tasks`, select **Try it out**, paste the valid body below, then **Execute**. Point to `201 Created` and the returned task ID.
 
 ```json
 {
@@ -44,18 +52,30 @@ Open `http://127.0.0.1:8000/docs` and leave the browser on Swagger UI.
 }
 ```
 
-3. Change `priority` to `9` and execute again. Confirm `422` and point to the priority constraint.
-4. Stop the live demonstration. Do not demonstrate update or delete unless the tutor asks.
+3. In the same `POST /tasks` request, change `priority` to `9` and execute again. Point to `422 Validation Error` and explain that Pydantic accepts only values from 1 to 5.
+4. Return to the PowerPoint. Do not demonstrate update or delete unless the tutor asks.
+
+## Automated testing on slide 13
+
+Explain the verified screenshot rather than running tests live. If the tutor asks for a live test, open a prepared PowerShell window in `fastapi-project` and run:
+
+```powershell
+..\.venv\Scripts\python.exe -m pytest -q
+```
+
+Expected result: `8 passed`.
 
 ## Fallback plan
 
-If the server or browser fails, return to slide 8 and explain the expected `200`, `201` and `422` results. Slide 14 shows the complete CRUD flow, and slide 9 shows the verified `8 passed` test result. Do not spend presentation time troubleshooting.
+If the server or browser fails, return to slide 12 and explain the expected `200`, `201` and `422` results shown on the slide. Slide 13 shows the verified automated tests. Do not spend presentation time troubleshooting.
 
 ## Before class
 
-- Add the group members' names to the title slide if required by the tutor.
-- Confirm the presentation order and practise speaker handovers.
+- Add the final member names and presentation group letter to the submission form.
+- Confirm the speaking order and practise handovers.
 - Run `pytest -q` and confirm `8 passed`.
 - Start Uvicorn and open `/docs` before screen sharing begins.
-- Keep the PowerPoint file, repository folder and browser available locally.
-- Confirm the actual presentation slot and final link-submission deadline in Aula.
+- Test the GitHub Pages link and QR code on a second device.
+- Keep the PowerPoint, browser, repository and demo tutorial available locally.
+- Confirm the exact presentation slot and submission deadline in Aula.
+

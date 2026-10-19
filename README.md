@@ -11,7 +11,7 @@ A beginner-friendly learning project for the COMP10020 Internet Technologies Fas
 
 - `fastapi-project/` — working FastAPI application and tests
 - `docs/` — static learning resource for GitHub Pages
-- `presentation/` — final PowerPoint presentation
+- `presentation/` — final PowerPoint, rehearsal script, live-demo tutorial and presentation guide
 - `requirements.txt` — application dependencies
 - `requirements-dev.txt` — application and test dependencies
 
@@ -70,4 +70,14 @@ The online learning resource is served from the `docs/` folder on the `main` bra
 5. Save and wait for GitHub to display the public Pages URL.
 
 Use the two live links above in the CW1 submission form.
+
+## Presentation materials
+
+- Final deck: `presentation/FastAPI_Task_Manager_Presentation_Final.pptx`
+- Rehearsal script: `presentation/FastAPI_Complete_Presentation_Script_1-17.docx`
+- Classroom demo tutorial: `presentation/FastAPI_Classroom_Live_Demo_Tutorial_CN.docx`
+- Timing and handover guide: `presentation/PRESENTATION-GUIDE.md`
+
+The final deck is the group's unchanged 18-slide version: slides 1–17 are the planned presentation and slide 18 contains references.
+
 
