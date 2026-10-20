@@ -1,8 +1,8 @@
 .venv/
-.build-presentation/
-.build-222/
-.qa-final-slides/
-.qa-final-montage.png
+.build-*/
+.codex-finalizer*/
+.qa-*
+node_modules/
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -11,5 +11,5 @@ htmlcov/
 .idea/
 .vscode/
 ~$*
-
-
+Thumbs.db
+.DS_Store
