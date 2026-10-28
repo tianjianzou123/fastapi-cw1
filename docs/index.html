@@ -25,6 +25,7 @@
         <a href="#how-it-works">How it works</a>
         <a href="#examples">Examples</a>
         <a href="#tutorial">Tutorial</a>
+        <a href="build.html">Build the API</a>
         <a href="#exercises">Exercises</a>
         <a href="#references">References</a>
       </div>
@@ -46,18 +47,19 @@
         </div>
         <dl class="hero-meta" aria-label="Resource summary">
           <div><dt>Level</dt><dd>Beginner</dd></div>
-          <div><dt>Lab time</dt><dd>40-50 minutes</dd></div>
+          <div><dt>Lab time</dt><dd>Run: 40–50 min · Build: 75–100 min</dd></div>
           <div><dt>Platform</dt><dd>Windows and VS Code</dd></div>
         </dl>
       </div>
       <div class="hero-code" aria-label="FastAPI example">
         <div class="code-window-title">
-          <span>app/main.py</span>
-          <span class="status-dot">API online</span>
+          <span>Minimal route example</span>
+          <span class="status-dot">Runs locally</span>
         </div>
         <pre><code><span class="code-keyword">from</span> fastapi <span class="code-keyword">import</span> FastAPI
 
 app = FastAPI()
+tasks = []
 
 <span class="code-decorator">@app.get</span>(<span class="code-string">"/tasks"</span>)
 <span class="code-keyword">def</span> <span class="code-function">list_tasks</span>():
@@ -86,6 +88,7 @@ app = FastAPI()
           <p>
             The schema powers two documentation interfaces included by default: Swagger UI at <code>/docs</code> and ReDoc at <code>/redoc</code>. Swagger UI can send real requests, which makes it useful for development and classroom demonstrations.
           </p>
+          <p class="small-note">Sources: <a href="#references">FastAPI Features and First Steps [1, 2]</a>. The completed project uses a repository instead of the minimal list shown above.</p>
         </div>
         <dl class="fact-list">
           <div><dt>Framework</dt><dd>FastAPI</dd></div>
@@ -131,9 +134,9 @@ app = FastAPI()
           <tbody>
             <tr><td><code>GET</code></td><td><code>/tasks</code></td><td>List tasks and apply optional filters</td><td>200 OK</td></tr>
             <tr><td><code>POST</code></td><td><code>/tasks</code></td><td>Create a validated task</td><td>201 Created</td></tr>
-            <tr><td><code>GET</code></td><td><code>/tasks/{id}</code></td><td>Read one task</td><td>200 OK</td></tr>
-            <tr><td><code>PUT</code></td><td><code>/tasks/{id}</code></td><td>Replace the editable task fields</td><td>200 OK</td></tr>
-            <tr><td><code>DELETE</code></td><td><code>/tasks/{id}</code></td><td>Remove a task</td><td>204 No Content</td></tr>
+            <tr><td><code>GET</code></td><td><code>/tasks/{task_id}</code></td><td>Read one task</td><td>200 OK</td></tr>
+            <tr><td><code>PUT</code></td><td><code>/tasks/{task_id}</code></td><td>Replace the editable task fields</td><td>200 OK</td></tr>
+            <tr><td><code>DELETE</code></td><td><code>/tasks/{task_id}</code></td><td>Remove a task</td><td>204 No Content</td></tr>
           </tbody>
         </table>
       </div>
@@ -149,6 +152,7 @@ app = FastAPI()
           <p>
             The request body must contain a visible title. Priority accepts values from 1 to 5, and status accepts only the three values in the <code>TaskStatus</code> enumeration. Invalid data receives a 422 response before the route changes any stored tasks.
           </p>
+          <p>The excerpt shows field declarations. The complete file also imports its types and uses a validator to reject whitespace-only titles. See <a href="build.html#build-2">the model construction step</a> and <a href="#references">Pydantic documentation [5]</a>.</p>
           <ul class="check-list">
             <li>Clear field types</li>
             <li>Length and range constraints</li>
@@ -203,6 +207,7 @@ app = FastAPI()
       <p>
         Complete the steps in order. By the end, you will run the API, create and update a task, observe a validation error and execute the automated tests.
       </p>
+      <p><strong>Build it yourself:</strong> the <a href="build.html">development lab</a> walks through the model, repository, routes and tests, with complete files and a checkpoint after every step. Use the steps below to run the finished application first.</p>
       <div class="outcomes">
         <h3>Learning outcomes</h3>
         <ul>
@@ -331,7 +336,7 @@ app = FastAPI()
         <div class="step-number">9</div>
         <div class="step-content">
           <h3>Run the automated tests</h3>
-          <p>Stop the server with <kbd>Ctrl</kbd> + <kbd>C</kbd>. From the <code>fastapi-project</code> folder, run the test suite.</p>
+          <p>Open a second PowerShell terminal in <code>fastapi-project</code> and run the test suite. TestClient creates an isolated app, so Uvicorn can stay open. You can also stop the server with <kbd>Ctrl</kbd> + <kbd>C</kbd> if finished.</p>
           <div class="code-block">
             <div class="code-block-header"><span>PowerShell</span><button type="button" class="copy-button">Copy</button></div>
             <pre><code>..\.venv\Scripts\python.exe -m pytest -q</code></pre>
@@ -375,9 +380,9 @@ app = FastAPI()
           <h3>Useful commands</h3>
           <dl>
             <div><dt>Create environment</dt><dd><code>python -m venv .venv</code></dd></div>
-            <div><dt>Install packages</dt><dd><code>python -m pip install -r requirements-dev.txt</code></dd></div>
-            <div><dt>Start server</dt><dd><code>python -m uvicorn app.main:app --reload</code></dd></div>
-            <div><dt>Run tests</dt><dd><code>python -m pytest -q</code></dd></div>
+            <div><dt>Install packages<br>(repository root)</dt><dd><code>.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt</code></dd></div>
+            <div><dt>Start server<br>(fastapi-project)</dt><dd><code>..\.venv\Scripts\python.exe -m uvicorn app.main:app --reload</code></dd></div>
+            <div><dt>Run tests<br>(fastapi-project)</dt><dd><code>..\.venv\Scripts\python.exe -m pytest -q</code></dd></div>
           </dl>
         </div>
         <div>
@@ -393,7 +398,7 @@ app = FastAPI()
       </div>
     </section>
 
-    <section class="section-shell content-section troubleshooting">
+    <section class="section-shell content-section troubleshooting" id="troubleshooting">
       <div class="section-heading">
         <p class="eyebrow">Troubleshooting</p>
         <h2>Common setup problems</h2>
@@ -425,7 +430,7 @@ app = FastAPI()
         <li>FastAPI (2026) <em>Features</em>. Available at: <a href="https://fastapi.tiangolo.com/features/">https://fastapi.tiangolo.com/features/</a> (Accessed: 14 October 2026).</li>
         <li>FastAPI (2026) <em>First Steps</em>. Available at: <a href="https://fastapi.tiangolo.com/tutorial/first-steps/">https://fastapi.tiangolo.com/tutorial/first-steps/</a> (Accessed: 14 October 2026).</li>
         <li>FastAPI (2026) <em>Testing</em>. Available at: <a href="https://fastapi.tiangolo.com/tutorial/testing/">https://fastapi.tiangolo.com/tutorial/testing/</a> (Accessed: 14 October 2026).</li>
-        <li>OpenAPI Initiative (2026) <em>OpenAPI Specification v3.2.1</em>. Available at: <a href="https://spec.openapis.org/oas/v3.2.1.html">https://spec.openapis.org/oas/v3.2.1.html</a> (Accessed: 14 October 2026).</li>
+        <li>OpenAPI Initiative (2021) <em>OpenAPI Specification v3.1.0</em>. Available at: <a href="https://spec.openapis.org/oas/v3.1.0.html">https://spec.openapis.org/oas/v3.1.0.html</a>. This is the schema version used by the example application.</li>
         <li>Pydantic (2026) <em>Pydantic Documentation</em>. Available at: <a href="https://docs.pydantic.dev/latest/">https://docs.pydantic.dev/latest/</a> (Accessed: 14 October 2026).</li>
         <li>Python Software Foundation (2026) <em>venv - Creation of virtual environments</em>. Available at: <a href="https://docs.python.org/3.12/library/venv.html">https://docs.python.org/3.12/library/venv.html</a> (Accessed: 14 October 2026).</li>
         <li>pytest (2026) <em>Get Started</em>. Available at: <a href="https://docs.pytest.org/en/stable/getting-started.html">https://docs.pytest.org/en/stable/getting-started.html</a> (Accessed: 14 October 2026).</li>

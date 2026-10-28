@@ -1,4 +1,5 @@
 .venv/
+lab-work/
 .build-*/
 .codex-finalizer*/
 .qa-*
@@ -13,3 +14,4 @@ htmlcov/
 ~$*
 Thumbs.db
 .DS_Store
+

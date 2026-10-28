@@ -272,7 +272,7 @@ kbd { padding: 2px 6px; border: 1px solid #a7b5bd; border-bottom-width: 3px; bor
   font-size: 14px;
 }
 .site-footer p { margin: 5px 0; }
-.site-footer a { color: var(--mint); text-underline-offset: 4px; }
+.site-footer a { color: #8de2bd; text-underline-offset: 4px; }
 .site-footer a:hover { color: var(--white); }
 
 @media (max-width: 900px) {
@@ -322,4 +322,21 @@ kbd { padding: 2px 6px; border: 1px solid #a7b5bd; border-bottom-width: 3px; bor
   .tutorial-step { break-inside: avoid; }
   a { color: #000; }
 }
+
+.lab-contents { padding: 24px 0 40px; }
+.lab-contents ol { display: flex; flex-wrap: wrap; gap: 12px 32px; padding-left: 22px; }
+.tutorial-step h2 { font-size: clamp(27px, 3vw, 34px); margin: 0 0 22px; }
+.section-intro h1 { max-width: 100%; }
+.outcomes h2 { font-size: 25px; }
+.full-source { margin: 26px 0; padding: 16px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.full-source summary, .practice-item summary, .self-check summary { cursor: pointer; font-weight: 700; color: var(--teal-dark); }
+.full-source pre { max-height: 680px; overflow: auto; }
+.practice-item { padding: 30px 0; border-top: 1px solid var(--line); }
+.practice-item details, .self-check { padding: 16px 0; }
+.step-content .table-wrap { margin: 24px 0; }
+.step-content ol:not(.request-flow) li { margin-bottom: 12px; }
+.step-content .request-flow { margin: 32px 0; }
+.nav-links { gap: 18px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 

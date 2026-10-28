@@ -16,7 +16,7 @@ The planned content and demo total about 13 minutes 15 seconds. The buffer keeps
 
 ## Final presentation files
 
-- `FastAPI_Task_Manager_Presentation_Final.pptx` — unchanged copy of the group's 18-slide final deck
+- `FastAPI_Task_Manager_Presentation_Final.pptx` — the group's 18-slide final deck; slide 13 contains the test command and summary
 - `FastAPI_Complete_Presentation_Script_1-17.docx` — rehearsal script for slides 1–17
 - `FastAPI_Classroom_Live_Demo_Tutorial_CN.docx` — detailed Chinese classroom demo instructions
 
@@ -57,25 +57,24 @@ Keep the live section to about 2 minutes 15 seconds:
 
 ## Automated testing on slide 13
 
-Explain the verified screenshot rather than running tests live. If the tutor asks for a live test, open a prepared PowerShell window in `fastapi-project` and run:
+Allow 35–40 seconds within Member 4's allocated time. Open a prepared second PowerShell window in `fastapi-project` and run:
 
 ```powershell
 ..\.venv\Scripts\python.exe -m pytest -q
 ```
 
-Expected result: `8 passed`.
+Expected result: `8 passed`. Point to the result, explain that TestClient uses a fresh repository for each test, and return to slide 14. Uvicorn can stay open. The elapsed test time varies. Passing tests support the checked cases; they do not prove that every possible bug is absent.
 
 ## Fallback plan
 
-If the server or browser fails, return to slide 12 and explain the expected `200`, `201` and `422` results shown on the slide. Slide 13 shows the verified automated tests. Do not spend presentation time troubleshooting.
+If the server or browser fails, return to slide 12 and explain the expected `200`, `201` and `422` results shown on the slide. Slide 13 summarises the test coverage and verified eight-test result. If the terminal fails, explain this summary and continue. Do not spend presentation time troubleshooting.
 
 ## Before class
 
-- Add the final member names and presentation group letter to the submission form.
+- Review the completed Group E submission form and shared declaration before uploading both Word files.
 - Confirm the speaking order and practise handovers.
 - Run `pytest -q` and confirm `8 passed`.
 - Start Uvicorn and open `/docs` before screen sharing begins.
 - Test the GitHub Pages link and QR code on a second device.
 - Keep the PowerPoint, browser, repository and demo tutorial available locally.
 - Confirm the exact presentation slot and submission deadline in Aula.
-

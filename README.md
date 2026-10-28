@@ -5,6 +5,7 @@ A beginner-friendly learning project for the COMP10020 Internet Technologies Fas
 ## Live links
 
 - Online learning resource: https://tianjianzou123.github.io/fastapi-cw1/
+- Build the API step by step: https://tianjianzou123.github.io/fastapi-cw1/build.html
 - Public GitHub repository: https://github.com/tianjianzou123/fastapi-cw1
 
 ## Repository contents
@@ -49,6 +50,15 @@ From `fastapi-project/`:
 
 Expected result: `8 passed`.
 
+Slide 13 includes a short live test run in a second terminal. Keep the Swagger demonstration and the tests together below three minutes.
+
+## Tutorial routes
+
+- **Run the example (40–50 minutes):** setup, Swagger UI, CRUD, validation and tests on the main learning page.
+- **Build the API (75–100 minutes):** create the model and repository, implement GET and POST, write two tests, then add complete CRUD and the eight-test suite. Each step includes file locations, complete code and expected results. Exercises include hints and success criteria.
+
+The development lab uses a separate `lab-work` folder and port 8001. The presentation application stays in `fastapi-project` and normally uses port 8000. GitHub Pages hosts only the static teaching materials.
+
 ## Preview the learning resource
 
 Open `docs/index.html` directly, or run a local static server from the `docs/` folder:
@@ -78,6 +88,5 @@ Use the two live links above in the CW1 submission form.
 - Classroom demo tutorial: `presentation/FastAPI_Classroom_Live_Demo_Tutorial_CN.docx`
 - Timing and handover guide: `presentation/PRESENTATION-GUIDE.md`
 
-The final deck is the group's unchanged 18-slide version: slides 1–17 are the planned presentation and slide 18 contains references.
-
+The final deck contains 18 slides: slides 1–17 are the planned presentation and slide 18 contains references. Slide 13 presents the test command, verified result and coverage summary without the old screenshot.
 
