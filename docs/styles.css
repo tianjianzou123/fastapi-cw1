@@ -146,7 +146,7 @@ h3 { margin: 0 0 12px; font-size: 23px; }
   background: var(--code);
   box-shadow: var(--shadow);
 }
-.hero-code { transform: rotate(1.2deg); }
+.hero-code { transform: none; }
 .code-window-title, .code-block-header {
   min-height: 48px;
   padding: 10px 18px;
@@ -339,4 +339,5 @@ kbd { padding: 2px 6px; border: 1px solid #a7b5bd; border-bottom-width: 3px; bor
 .nav-links { gap: 18px; }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
 
