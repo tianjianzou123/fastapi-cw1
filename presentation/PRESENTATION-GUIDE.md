@@ -16,9 +16,8 @@ The planned content and demo total about 13 minutes 15 seconds. The buffer keeps
 
 ## Final presentation files
 
-- `FastAPI_Task_Manager_Presentation_Final.pptx` — the group's 18-slide final deck; slide 13 contains the test command and summary
-- `FastAPI_Complete_Presentation_Script_1-17.docx` — rehearsal script for slides 1–17
-- `FastAPI_Classroom_Live_Demo_Tutorial_CN.docx` — detailed Chinese classroom demo instructions
+- `FastAPI_Task_Manager_Presentation_Final.pptx` — the group's 18-slide final deck with embedded speaker notes; slide 13 contains the test command and summary
+- `PRESENTATION-GUIDE.md` — timing, handover, live-demo and fallback guidance for the group
 
 ## Online learning resource
 
@@ -76,5 +75,6 @@ If the server or browser fails, return to slide 12 and explain the expected `200
 - Run `pytest -q` and confirm `8 passed`.
 - Start Uvicorn and open `/docs` before screen sharing begins.
 - Test the GitHub Pages link and QR code on a second device.
-- Keep the PowerPoint, browser, repository and demo tutorial available locally.
+- Keep the PowerPoint, browser and repository available locally.
 - Confirm the exact presentation slot and submission deadline in Aula.
+
